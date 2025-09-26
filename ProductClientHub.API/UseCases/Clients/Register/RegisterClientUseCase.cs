@@ -15,21 +15,21 @@ namespace ProductClientHub.API.UseCases.Clients.Register
 
             var dbContext = new ProductClientHubDbContext();
 
-            var entity = new Client
+            var client = new Client
             {
                 Name = request.Name,
                 Email = request.Email,
             };
 
-            dbContext.Clients.Add(entity);
+            dbContext.Clients.Add(client);
 
             dbContext.SaveChanges();
 
             return new ResponseShortClientJson
             {
-                Id = entity.Id,
-                Name = entity.Name,
-                Email = entity.Email,
+                Id = client.Id,
+                Name = client.Name,
+                Email = client.Email,
             };
         }
 
