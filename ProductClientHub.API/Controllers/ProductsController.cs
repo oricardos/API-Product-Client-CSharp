@@ -30,7 +30,6 @@ namespace ProductClientHub.API.Controllers
         [ProducesResponseType(typeof(ResponseErrorMessagesJson), StatusCodes.Status404NotFound)]
         public IActionResult Delete([FromRoute] int id)
         {
-
             var useCase = new DeleteProductUseCase();
 
             useCase.Execute(id);
